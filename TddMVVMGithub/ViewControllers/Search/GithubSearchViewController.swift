@@ -16,13 +16,6 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    private let uiSearchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.returnKeyType = .done
-        searchBar.placeholder = "Search"
-        return searchBar
-    }()
-
     let dataSource = RxCollectionViewSectionedAnimatedDataSource<RepositorySection>(
         configureCell: { ds, cv, ip, item in
             guard let cell = cv.dequeueReusableCell(withReuseIdentifier: RepositoryCell.swiftIdentifier, for: ip) as? RepositoryCell else { return UICollectionViewCell() }
@@ -49,24 +42,11 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         activityIndicator.isHidden = true
         collectionView.register(RepositoryCell.nib, forCellWithReuseIdentifier: RepositoryCell.swiftIdentifier)
         collectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        navigationItem.titleView = uiSearchBar
-
+        
         viewModel.isLoading
             .distinctUntilChanged()
             .debug("isLoading")
             .bind(to: activityIndicator.rx.showLoading)
-            .disposed(by: disposeBag)
-
-        uiSearchBar.rx.text.orEmpty
-            .distinctUntilChanged()
-            .bind(to: viewModel.searchText)
-            .disposed(by: disposeBag)
-
-        uiSearchBar.rx.searchButtonClicked
-            .do(onNext: { [weak uiSearchBar] in
-                uiSearchBar?.resignFirstResponder()
-            })
-            .bind(to: viewModel.doSearch)
             .disposed(by: disposeBag)
 
         viewModel.sections

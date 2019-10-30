@@ -12,6 +12,7 @@ target 'TddMVVMGithub' do
   pod 'RxCocoa'
   pod 'SwiftGen'
   pod 'SwiftLint'
+  pod 'Then'
   pod 'RxDataSources'
   pod 'SnapKit', '~> 5.0.0'
   target 'TddMVVMGithubTests' do

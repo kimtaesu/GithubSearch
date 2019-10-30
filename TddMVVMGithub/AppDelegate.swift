@@ -5,7 +5,7 @@
 //  Created by tskim on 10/08/2019.
 //  Copyright © 2019 hucet. All rights reserved.
 //
-
+import Then
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow()
         window.makeKeyAndVisible()
-        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: {
-            SearchViewModel(of: githubService, scheduler: schduler)
-        }))
+        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: SearchViewModel(of: githubService, scheduler: schduler)))
         window.rootViewController = UINavigationController(rootViewController: homeViewController)
         self.window = window
         return true

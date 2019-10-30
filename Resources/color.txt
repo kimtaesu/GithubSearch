@@ -1,5 +1,1 @@
-colorDark: 111111
-colorAccent: F9DE4B
-emptyLabel: 666666
-errorColor: ff331c
-warningColor: e8e051
+
