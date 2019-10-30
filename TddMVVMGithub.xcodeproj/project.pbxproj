@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -55,6 +55,9 @@
 		BDF0DE7122FFF9F7006CC179 /* RepositorySection+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE6A22FFF9F7006CC179 /* RepositorySection+Equatable.swift */; };
 		BDF0DE7222FFF9F7006CC179 /* TestRxScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE6B22FFF9F7006CC179 /* TestRxScheduler.swift */; };
 		BDF0DE7322FFF9F7006CC179 /* GithubSearchViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF0DE6C22FFF9F7006CC179 /* GithubSearchViewControllerTest.swift */; };
+		BDF402A2236984CC000B96C1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF402A1236984CC000B96C1 /* HomeViewController.swift */; };
+		BDF553B4236989D9005F6E26 /* color.txt in Resources */ = {isa = PBXBuildFile; fileRef = BDF553B3236989D9005F6E26 /* color.txt */; };
+		BDF553B7236989E4005F6E26 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BDF553B5236989E4005F6E26 /* Localizable.strings */; };
 		FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */; };
 /* End PBXBuildFile section */
 
@@ -126,6 +129,9 @@
 		BDF0DE6A22FFF9F7006CC179 /* RepositorySection+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepositorySection+Equatable.swift"; sourceTree = "<group>"; };
 		BDF0DE6B22FFF9F7006CC179 /* TestRxScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRxScheduler.swift; sourceTree = "<group>"; };
 		BDF0DE6C22FFF9F7006CC179 /* GithubSearchViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubSearchViewControllerTest.swift; sourceTree = "<group>"; };
+		BDF402A1236984CC000B96C1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		BDF553B3236989D9005F6E26 /* color.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = color.txt; sourceTree = "<group>"; };
+		BDF553B6236989E4005F6E26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = TddMVVMGithub/Base.lproj/Localizable.strings; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,8 @@
 		BD6289CC22FE424900109397 = {
 			isa = PBXGroup;
 			children = (
+				BDF553B923698A01005F6E26 /* Generated */,
+				BDF553B223698968005F6E26 /* Resources */,
 				BD922B5B22FE467000DE26C1 /* README.md */,
 				BD6289D722FE424900109397 /* TddMVVMGithub */,
 				BD6289EF22FE424B00109397 /* TddMVVMGithubTests */,
@@ -298,9 +306,8 @@
 		BDA0F2C222FFD92B00ADC7D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				BD6289DA22FE424900109397 /* GithubSearchViewController.swift */,
-				BD37FF9A23000497005E13E1 /* GithubSearchViewController.xib */,
-				BDA0F2C322FFD93800ADC7D8 /* SearchViewModel.swift */,
+				BDF402A0236984C0000B96C1 /* Home */,
+				BDF4029F236984B4000B96C1 /* Search */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -313,6 +320,48 @@
 				BDF0DE6B22FFF9F7006CC179 /* TestRxScheduler.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		BDF4029F236984B4000B96C1 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BD6289DA22FE424900109397 /* GithubSearchViewController.swift */,
+				BD37FF9A23000497005E13E1 /* GithubSearchViewController.xib */,
+				BDA0F2C322FFD93800ADC7D8 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		BDF402A0236984C0000B96C1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				BDF402A1236984CC000B96C1 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BDF553B223698968005F6E26 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BDF553B8236989F0005F6E26 /* Fonts */,
+				BDF553B5236989E4005F6E26 /* Localizable.strings */,
+				BDF553B3236989D9005F6E26 /* color.txt */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BDF553B8236989F0005F6E26 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BDF553B923698A01005F6E26 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +377,7 @@
 				BD6289D322FE424900109397 /* Resources */,
 				1FB215F1E04E7970CA9586FD /* [CP] Embed Pods Frameworks */,
 				BD6289FD22FE437D00109397 /* MarkUp */,
+				BDF553B1236988C8005F6E26 /* SwiftGen */,
 				BD6289FE22FE439700109397 /* SwiftLint */,
 			);
 			buildRules = (
@@ -403,8 +453,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDF553B4236989D9005F6E26 /* color.txt in Resources */,
 				BD37FF9B23000497005E13E1 /* GithubSearchViewController.xib in Resources */,
 				BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */,
+				BDF553B7236989E4005F6E26 /* Localizable.strings in Resources */,
 				BD6289E322FE424B00109397 /* Assets.xcassets in Resources */,
 				BD922B5C22FE467000DE26C1 /* README.md in Resources */,
 				BD37FF9723000161005E13E1 /* RepositoryCell.xib in Resources */,
@@ -515,6 +567,24 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nOUTPUT_FILE=\"$PROJECT_DIR/$TARGET_NAME/GeneratedMocks.swift\"\n\necho \"Generated Mocks File = $OUTPUT_FILE\"\n\n\nINPUT_DIR=\"${PROJECT_DIR}/TddMVVMGithub\"\n\n \necho \"Mocks Input Directory = ${INPUT_DIR}\"\n\n\n\"${PODS_ROOT}/Cuckoo/run\" generate --testable \"$PROJECT_NAME\" \\\n--output \"$OUTPUT_FILE\" \\\n\"$INPUT_DIR/Services/GithubServiceType.swift\" \\\n\"$INPUT_DIR/Networking/NetworkRequestProtocol.swift\" \\\n\n";
 		};
+		BDF553B1236988C8005F6E26 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$PODS_ROOT/SwiftGen/bin/swiftgen config run --config swiftgen.yml --verbose\n";
+		};
 		BFE2C89EC551DABC2D22493A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,6 +650,7 @@
 				BD922B7922FE511F00DE26C1 /* GithubService.swift in Sources */,
 				BD922B6822FE474500DE26C1 /* RxSchedulerType.swift in Sources */,
 				BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */,
+				BDF402A2236984CC000B96C1 /* HomeViewController.swift in Sources */,
 				BD922B8C22FE644900DE26C1 /* Data+Decode.swift in Sources */,
 				BD62523922FEF62100E7B564 /* Encodable+Dict.swift in Sources */,
 				BD922B9222FE6C5600DE26C1 /* HasDisposeBag.swift in Sources */,
@@ -629,6 +700,14 @@
 				BD6289E522FE424B00109397 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		BDF553B5236989E4005F6E26 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BDF553B6236989E4005F6E26 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

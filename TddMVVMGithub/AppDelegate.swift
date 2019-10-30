@@ -15,12 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         HTTPLog.enabled = true
+        
         let schduler = RxScheduler()
         let githubService = GithubService(scheduler: schduler)
-        let searchViewModel = SearchViewModel(of: githubService, scheduler: schduler)
+        
         let window = UIWindow()
         window.makeKeyAndVisible()
-        window.rootViewController = UINavigationController(rootViewController: GithubSearchViewController(viewModel: searchViewModel))
+        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: {
+            SearchViewModel(of: githubService, scheduler: schduler)
+        }))
+        window.rootViewController = UINavigationController(rootViewController: homeViewController)
         self.window = window
         return true
     }

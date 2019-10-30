@@ -8,9 +8,12 @@ target 'TddMVVMGithub' do
 
   # Pods for TddMVVMGithub
   pod 'RxSwift'
+  pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'SwiftGen'
   pod 'SwiftLint'
   pod 'RxDataSources'
+  pod 'SnapKit', '~> 5.0.0'
   target 'TddMVVMGithubTests' do
     inherit! :search_paths
     # Pods for testing
