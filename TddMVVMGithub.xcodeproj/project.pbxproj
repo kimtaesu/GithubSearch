@@ -428,24 +428,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithub/Pods-TddMVVMGithub-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithub/Pods-TddMVVMGithub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithub/Pods-TddMVVMGithub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -556,22 +543,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Cuckoo/Cuckoo.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cuckoo.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

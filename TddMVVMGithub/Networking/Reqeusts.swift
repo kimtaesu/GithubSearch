@@ -17,25 +17,25 @@ class Requests: NetworkRequestProtocol {
     
     private init() { }
 
-    func request(with: URLRequest) -> Single<Data> {
-        return Single.create { [weak session] single in
+    func request(with: URLRequest) -> Observable<Data> {
+        return Observable.create { [weak session] observer in
             HTTPLog.log(request: with)
             guard let session = session else { return Disposables.create() }
             let task = session.dataTask(with: with) { data, response, error in
                 defer { HTTPLog.log(data: data, response: response, error: error) }
                 guard let response = response, let data = data else {
-                    single(.error(RequestsError.ResponseErrorReason.noURLResponse))
+                    observer.onError(RequestsError.ResponseErrorReason.noURLResponse)
                     return
                 }
                 guard let httpResponse = response as? HTTPURLResponse else {
-                    single(.error(RequestsError.ResponseErrorReason.invalidURLResponse(response: response)))
+                    observer.onError(RequestsError.ResponseErrorReason.invalidURLResponse(response: response))
                     return
                 }
 
                 if 200 ..< 300 ~= httpResponse.statusCode {
-                    single(.success(data))
+                    observer.onNext(data)
                 } else {
-                    single(.error(RequestsError.ResponseErrorReason.invalidHTTPStatusCode(response: httpResponse)))
+                    observer.onError(RequestsError.ResponseErrorReason.invalidHTTPStatusCode(response: httpResponse))
                 }
             }
             task.resume()

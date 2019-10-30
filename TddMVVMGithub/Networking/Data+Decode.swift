@@ -16,8 +16,8 @@ extension Data {
     }
 }
 
-extension PrimitiveSequence where Trait == SingleTrait, Element == Data {
-    public func map<D: Decodable>(_ type: D.Type) -> Single<D> {
+extension Observable where Element == Data {
+    public func map<D: Decodable>(_ type: D.Type) -> Observable<D> {
         return self.map {
             return try $0.decode(type)
         }

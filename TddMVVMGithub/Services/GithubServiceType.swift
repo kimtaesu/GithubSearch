@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol GithubServiceType: class {
-    func search(sortOption: SearchOption) -> Single<SearchRepositories>
+    func search(sortOption: SearchOption) -> Observable<SearchRepositories>
 }

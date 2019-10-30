@@ -35,13 +35,13 @@ class SearchViewModel: HasDisposeBag {
                 })
             .observeOn(self.scheduler.io)
             .withLatestFrom(shareSearchText)
-            .flatMapLatest { [weak service, _repositories] text -> Single<SearchRepositories> in
+            .flatMapLatest { [weak service, _repositories] text -> Observable<SearchRepositories> in
                 assertBackgroundThread()
                 return (service?.search(sortOption: SearchOption(query: text)) ?? .never())
                     .debug("search a repositories of Github")
                     .catchError {
                         print("error: \($0)")
-                        return Single.just(SearchRepositories(total_count: Int.max, incomplete_results: false, items: _repositories))
+                        return Observable.just(SearchRepositories(total_count: Int.max, incomplete_results: false, items: _repositories))
                 }
             }
             .subscribe(onNext: { [weak self] result in

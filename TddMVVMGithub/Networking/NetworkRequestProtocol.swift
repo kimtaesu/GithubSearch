@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol NetworkRequestProtocol {
-    func request(with: URLRequest) -> Single<Data>
+    func request(with: URLRequest) -> Observable<Data>
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2019 hucet. All rights reserved.
 //
 
-
 protocol SwiftNameIdentifier {
     static var swiftIdentifier: String { get }
 }

@@ -27,9 +27,9 @@ class GithubService: GithubServiceType {
         self.init(scheduler: scheduler, requests: Requests.shared)
     }
     
-    func search(sortOption: SearchOption) -> Single<SearchRepositories> {
+    func search(sortOption: SearchOption) -> Observable<SearchRepositories> {
         let path = "/search/repositories"
-        return Single
+        return Observable
             .deferred {
                 var urlRequest: URLRequest
                 do {
@@ -40,7 +40,7 @@ class GithubService: GithubServiceType {
                         .build()
                     urlRequest.addValue("", forHTTPHeaderField: "User-Agent")
                 } catch {
-                    return Single.error(error)
+                    return Observable.error(error)
                 }
                 return self.requests.request(with: urlRequest)
                     .map(SearchRepositories.self)

@@ -8,8 +8,8 @@
 
 import Foundation
 class HTTPLog {
-    
     static var enabled = false
+    
     class func log(request: URLRequest) {
         #if !DEBUG
             return
