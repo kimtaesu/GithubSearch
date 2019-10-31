@@ -7,12 +7,12 @@
 //
 
 import RxDataSources
-import UIKit
 import RxSwift
+import UIKit
 
 class GithubSearchViewController: UIViewController, HasDisposeBag {
 
-    private let nextPageViewModel: NextPageViewModel
+    private let viewModel: SearchUserViewModel
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -26,8 +26,8 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         }
     )
 
-    init(viewModel: NextPageViewModel) {
-        self.nextPageViewModel = viewModel
+    init(viewModel: SearchUserViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -48,20 +48,29 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         bindingViews()
     }
     private func bindingViews() {
-        nextPageViewModel.isLoading
+        viewModel.isLoading
             .distinctUntilChanged()
             .debug("isLoading")
             .bind(to: activityIndicator.rx.showLoading)
             .disposed(by: disposeBag)
 
-        nextPageViewModel.sections
+        viewModel.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        nextPageViewModel.showAlert
+        viewModel.showAlert
             .bind(to: self.rx.showAlertView)
             .disposed(by: disposeBag)
-
+        
+        viewModel.navigateDetailView
+            .map { SafariRouteArgument(url: $0) }
+            .bind(to: self.rx.presentSafari)
+            .disposed(by: disposeBag)
+            
+        collectionView.rx.itemSelected
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
         //        collectionView.rx.reachedBottom
 //            .withLatestFrom(nextpageViewModel.isLoading)
 //            .filter { !$0 }

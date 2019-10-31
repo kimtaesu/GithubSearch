@@ -12,7 +12,7 @@ import UIKit
 class HomeViewController: UITabBarController, HasDisposeBag {
     
     struct Dependency {
-        let viewModel: NextPageViewModel
+        let viewModel: SearchUserViewModel
     }
     
     private let uiSearchBar: UISearchBar = {

@@ -15,11 +15,15 @@ class SearchUserViewModel: HasDisposeBag {
     private let service: GithubServiceType
     private let scheduler: RxSchedulerType
 
-    let isLoading = PublishRelay<Bool>()
     let searchText = PublishRelay<String>()
-    let sections = PublishRelay<[GitUserSection]>()
+    let itemSelected = PublishRelay<IndexPath>()
     let doSearch = PublishRelay<Void>()
+
+    let isLoading = PublishRelay<Bool>()
     let showAlert = PublishRelay<UIAlertViewModel>()
+    let sections = PublishRelay<[GitUserSection]>()
+    let navigateDetailView = PublishRelay<String>()
+
     private var _userSections: [GitUserSection] = []
     
     init(of: GithubServiceType, scheduler: RxSchedulerType) {
@@ -28,6 +32,15 @@ class SearchUserViewModel: HasDisposeBag {
 
         let shareSearchText = searchText.share()
 
+        itemSelected
+            .debug("item selected")
+            .subscribe(onNext: { [weak self] ip in
+                guard let self = self else { return }
+                let url = self._userSections[ip.section].items[ip.item].url
+                self.navigateDetailView.accept(url)
+            })
+            .disposed(by: disposeBag)
+        
         doSearch
             .debug("doSearch")
             .observeOn(self.scheduler.main)
