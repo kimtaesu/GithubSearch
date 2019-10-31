@@ -7,14 +7,24 @@
 //
 
 import Foundation
+import CoreData
+import Then
 @testable import TddMVVMGithub
 
 struct Fixture {
-    struct Repositories {
-        static let sample: SearchRepositories = ResourcesLoader.loadJson("sample")
-        static var first: Repository {
+    struct GitUser {
+        static let sample: GitUserResponse = ResourcesLoader.loadJson("user_sample")
+        static var first: TddMVVMGithub.GitUser {
             return sample.items.first!
         }
-        static let sampleData: Data = ResourcesLoader.readData("sample", ofType: "json")
+        static let sampleData: Data = ResourcesLoader.readData("user_sample", ofType: "json")
+    }
+    
+    struct FXRFavorite {
+        static func createFavorite(context: NSManagedObjectContext, id: Int64 = 1) -> Favorite {
+            return Favorite(context: context).then {
+                $0.id = id
+            }
+        }
     }
 }

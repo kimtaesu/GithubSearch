@@ -15,7 +15,7 @@ import Cuckoo
 
 class SearchViewModelTest: XCTestCase {
 
-    var viewModel: SearchViewModel!
+    var viewModel: SearchUserViewModel!
     var service: MockGithubServiceType!
     var testSchduler: TestScheduler!
     var disposeBag: DisposeBag!
@@ -25,7 +25,7 @@ class SearchViewModelTest: XCTestCase {
         disposeBag = DisposeBag()
         service = MockGithubServiceType()
         testSchduler = TestScheduler(initialClock: 0, simulateProcessingDelay: false)
-        viewModel = SearchViewModel(of: service, scheduler: TestRxScheduler(testSchduler))
+        viewModel = SearchUserViewModel(of: service, scheduler: TestRxScheduler(testSchduler))
     }
 
     func testLoadingOnSuccess() {
@@ -48,11 +48,11 @@ class SearchViewModelTest: XCTestCase {
                 .next(0, true),
                 .next(0, false)
             ])
-        verify(service, times(1)).search(sortOption: any())
+        verify(service, times(1)).searchUser(sortOption: any())
     }
     func testSections() {
         let (data, _) = service.setMocking()
-        let sections = testSchduler.createObserver([RepositorySection].self)
+        let sections = testSchduler.createObserver([GitUserSection].self)
         viewModel.sections
             .bind(to: sections)
             .disposed(by: disposeBag)
@@ -66,12 +66,12 @@ class SearchViewModelTest: XCTestCase {
         
         testSchduler.start()
 
-        let expect = [RepositorySection(header: "test", items: data.items)]
+        let expect = [GitUserSection(header: "test", items: data.items)]
         XCTAssertEqual(sections.events, [
             .next(0, expect)
             ])
         
-        verify(service, times(1)).search(sortOption: any())
+        verify(service, times(1)).searchUser(sortOption: any())
     }
     func testLoadingOnFailure() {
         service.setMocking(error: TestError.test)
@@ -97,6 +97,6 @@ class SearchViewModelTest: XCTestCase {
             .next(50, false)
             ])
         
-        verify(service, times(2)).search(sortOption: any())
+        verify(service, times(2)).searchUser(sortOption: any())
     }
 }

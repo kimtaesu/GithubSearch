@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-08-11 10:05:06 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Networking/NetworkRequestProtocol.swift at 2019-10-31 12:53:07 +0000
 
 //
 //  NetworkRequestProtocol.swift
@@ -40,9 +40,9 @@ import RxSwift
     
     
     
-     func request(with: URLRequest) -> Single<Data> {
+     func request(with: URLRequest) -> Observable<Data> {
         
-    return cuckoo_manager.call("request(with: URLRequest) -> Single<Data>",
+    return cuckoo_manager.call("request(with: URLRequest) -> Observable<Data>",
             parameters: (with),
             escapingParameters: (with),
             superclassCall:
@@ -62,9 +62,9 @@ import RxSwift
 	    }
 	    
 	    
-	    func request<M1: Cuckoo.Matchable>(with: M1) -> Cuckoo.ProtocolStubFunction<(URLRequest), Single<Data>> where M1.MatchedType == URLRequest {
+	    func request<M1: Cuckoo.Matchable>(with: M1) -> Cuckoo.ProtocolStubFunction<(URLRequest), Observable<Data>> where M1.MatchedType == URLRequest {
 	        let matchers: [Cuckoo.ParameterMatcher<(URLRequest)>] = [wrap(matchable: with) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockNetworkRequestProtocol.self, method: "request(with: URLRequest) -> Single<Data>", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockNetworkRequestProtocol.self, method: "request(with: URLRequest) -> Observable<Data>", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -84,9 +84,9 @@ import RxSwift
 	
 	    
 	    @discardableResult
-	    func request<M1: Cuckoo.Matchable>(with: M1) -> Cuckoo.__DoNotUse<(URLRequest), Single<Data>> where M1.MatchedType == URLRequest {
+	    func request<M1: Cuckoo.Matchable>(with: M1) -> Cuckoo.__DoNotUse<(URLRequest), Observable<Data>> where M1.MatchedType == URLRequest {
 	        let matchers: [Cuckoo.ParameterMatcher<(URLRequest)>] = [wrap(matchable: with) { $0 }]
-	        return cuckoo_manager.verify("request(with: URLRequest) -> Single<Data>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("request(with: URLRequest) -> Observable<Data>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -98,14 +98,14 @@ import RxSwift
     
 
     
-     func request(with: URLRequest) -> Single<Data>  {
-        return DefaultValueRegistry.defaultValue(for: (Single<Data>).self)
+     func request(with: URLRequest) -> Observable<Data>  {
+        return DefaultValueRegistry.defaultValue(for: (Observable<Data>).self)
     }
     
 }
 
 
-// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-08-11 10:05:06 +0000
+// MARK: - Mocks generated from file: TddMVVMGithub/Services/GithubServiceType.swift at 2019-10-31 12:53:07 +0000
 
 //
 //  GithubServiceType.swift
@@ -147,16 +147,16 @@ import RxSwift
     
     
     
-     func search(sortOption: SearchOption) -> Single<SearchRepositories> {
+     func searchUser(sortOption: SearchOption) -> Observable<GitUserResponse> {
         
-    return cuckoo_manager.call("search(sortOption: SearchOption) -> Single<SearchRepositories>",
+    return cuckoo_manager.call("searchUser(sortOption: SearchOption) -> Observable<GitUserResponse>",
             parameters: (sortOption),
             escapingParameters: (sortOption),
             superclassCall:
                 
                 Cuckoo.MockManager.crashOnProtocolSuperclassCall()
                 ,
-            defaultCall: __defaultImplStub!.search(sortOption: sortOption))
+            defaultCall: __defaultImplStub!.searchUser(sortOption: sortOption))
         
     }
     
@@ -169,9 +169,9 @@ import RxSwift
 	    }
 	    
 	    
-	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.ProtocolStubFunction<(SearchOption), Single<SearchRepositories>> where M1.MatchedType == SearchOption {
+	    func searchUser<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.ProtocolStubFunction<(SearchOption), Observable<GitUserResponse>> where M1.MatchedType == SearchOption {
 	        let matchers: [Cuckoo.ParameterMatcher<(SearchOption)>] = [wrap(matchable: sortOption) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockGithubServiceType.self, method: "search(sortOption: SearchOption) -> Single<SearchRepositories>", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockGithubServiceType.self, method: "searchUser(sortOption: SearchOption) -> Observable<GitUserResponse>", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -191,9 +191,9 @@ import RxSwift
 	
 	    
 	    @discardableResult
-	    func search<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.__DoNotUse<(SearchOption), Single<SearchRepositories>> where M1.MatchedType == SearchOption {
+	    func searchUser<M1: Cuckoo.Matchable>(sortOption: M1) -> Cuckoo.__DoNotUse<(SearchOption), Observable<GitUserResponse>> where M1.MatchedType == SearchOption {
 	        let matchers: [Cuckoo.ParameterMatcher<(SearchOption)>] = [wrap(matchable: sortOption) { $0 }]
-	        return cuckoo_manager.verify("search(sortOption: SearchOption) -> Single<SearchRepositories>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("searchUser(sortOption: SearchOption) -> Observable<GitUserResponse>", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -205,8 +205,8 @@ import RxSwift
     
 
     
-     func search(sortOption: SearchOption) -> Single<SearchRepositories>  {
-        return DefaultValueRegistry.defaultValue(for: (Single<SearchRepositories>).self)
+     func searchUser(sortOption: SearchOption) -> Observable<GitUserResponse>  {
+        return DefaultValueRegistry.defaultValue(for: (Observable<GitUserResponse>).self)
     }
     
 }

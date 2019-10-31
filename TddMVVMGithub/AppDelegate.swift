@@ -5,7 +5,9 @@
 //  Created by tskim on 10/08/2019.
 //  Copyright © 2019 hucet. All rights reserved.
 //
-
+import BeautifulRequests
+import SnapKit
+import Then
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,12 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         HTTPLog.enabled = true
+        
         let schduler = RxScheduler()
         let githubService = GithubService(scheduler: schduler)
-        let searchViewModel = SearchViewModel(of: githubService, scheduler: schduler)
+        
         let window = UIWindow()
         window.makeKeyAndVisible()
-        window.rootViewController = UINavigationController(rootViewController: GithubSearchViewController(viewModel: searchViewModel))
+        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: SearchUserViewModel(of: githubService, scheduler: schduler)))
+        window.rootViewController = UINavigationController(rootViewController: homeViewController)
         self.window = window
         return true
     }
@@ -46,5 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
+        CoreDataManager.shared.saveContext()
     }
 }

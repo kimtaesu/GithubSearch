@@ -13,10 +13,10 @@ import XCTest
 class SearchRepositoriesDecodeTest: XCTestCase {
 
     func testDecode() {
-        let sample = ResourcesLoader.readData("sample", ofType: "json")
-        var result: SearchRepositories?
+        let sample = Fixture.GitUser.sampleData
+        var result: GitUserResponse?
         do {
-            result = try JSONDecoder().decode(SearchRepositories.self, from: sample)
+            result = try JSONDecoder().decode(GitUserResponse.self, from: sample)
         } catch {
             print("\(#function) \(#line) : catchs \(error)")
         }

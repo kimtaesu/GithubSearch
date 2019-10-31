@@ -15,7 +15,7 @@ import Cuckoo
 
 class GithubSearchViewControllerTest: XCTestCase {
     var viewController: GithubSearchViewController!
-    var viewModel: SearchViewModel!
+    var viewModel: SearchUserViewModel!
     var service: MockGithubServiceType!
     var testSchduler: TestScheduler!
     var disposeBag: DisposeBag!
@@ -25,7 +25,7 @@ class GithubSearchViewControllerTest: XCTestCase {
         disposeBag = DisposeBag()
         service = MockGithubServiceType()
         testSchduler = TestScheduler(initialClock: 0, simulateProcessingDelay: false)
-        viewModel = SearchViewModel(of: service, scheduler: TestRxScheduler(testSchduler))
+        viewModel = SearchUserViewModel(of: service, scheduler: TestRxScheduler(testSchduler))
         viewController = GithubSearchViewController(viewModel: viewModel)
         
         // trigger viewDidLoad
@@ -37,7 +37,7 @@ class GithubSearchViewControllerTest: XCTestCase {
         viewModel.searchText.accept("test")
         viewModel.doSearch.accept(())
         testSchduler.start()
-        let cell = viewController.dataSource.collectionView(viewController.collectionView, cellForItemAt: IndexPath(item: 0, section: 0)) as! RepositoryCell
-        XCTAssertEqual(cell.repositoryName.text, data.items.first!.name)
+        let cell = viewController.dataSource.collectionView(viewController.collectionView, cellForItemAt: IndexPath(item: 0, section: 0)) as! GitUserCell
+        XCTAssertEqual(cell.userName.text, data.items.first?.login)
     }
 }

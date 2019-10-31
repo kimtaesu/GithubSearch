@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BeautifulRequests/BeautifulRequests.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:TddMVVMGithub.xcodeproj">
    </FileRef>
    <FileRef

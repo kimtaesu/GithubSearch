@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  MediaSearch
+
+  Created by tskim on 19/07/2019.
+  Copyright © 2019 hucet. All rights reserved.
+*/
+"tabbar_search_title" = "검색";
+"tabbar_favorite_title" = "좋아요";
+"searchbar_placeholder" = "Search";
+"ok" = "확인";
+"cancel" = "취소";
+"search_empty_message" = "검색어를 입력해 주세요.";
