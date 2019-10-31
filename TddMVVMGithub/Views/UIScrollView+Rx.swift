@@ -6,8 +6,8 @@
 //  Copyright © 2019 hucet. All rights reserved.
 //
 
-import RxSwift
 import RxCocoa
+import RxSwift
 
 extension Reactive where Base: UIScrollView {
     var reachedBottom: ControlEvent<Void> {

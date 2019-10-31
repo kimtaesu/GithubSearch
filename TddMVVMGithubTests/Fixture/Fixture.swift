@@ -10,11 +10,11 @@ import Foundation
 @testable import TddMVVMGithub
 
 struct Fixture {
-    struct Repositories {
-        static let sample: SearchRepositories = ResourcesLoader.loadJson("sample")
-        static var first: Repository {
+    struct GitUser {
+        static let sample: GitUserResponse = ResourcesLoader.loadJson("user_sample")
+        static var first: TddMVVMGithub.GitUser {
             return sample.items.first!
         }
-        static let sampleData: Data = ResourcesLoader.readData("sample", ofType: "json")
+        static let sampleData: Data = ResourcesLoader.readData("user_sample", ofType: "json")
     }
 }

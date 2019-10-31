@@ -28,21 +28,21 @@ class GithubServiceTest: XCTestCase {
     }
 
     func testSampleSuccess() {
-        requests.setMocking(data: Fixture.Repositories.sampleData)
-        let response = scheduler.createObserver(SearchRepositories.self)
-        service.search(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
+        requests.setMocking(data: Fixture.GitUser.sampleData)
+        let response = scheduler.createObserver(GitUserResponse.self)
+        service.searchUser(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
         scheduler.start()
         // then
 
         XCTAssertEqual(response.events, [
-            .next(0, Fixture.Repositories.sample),
+            .next(0, Fixture.GitUser.sample),
                 .completed(0)
             ])
     }
     func testSampleFailture() {
         requests.setMocking(error: RequestsError.failDecoding)
-        let response = scheduler.createObserver(SearchRepositories.self)
-        service.search(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
+        let response = scheduler.createObserver(GitUserResponse.self)
+        service.searchUser(sortOption: SearchOption(query: "", sort: "", order: "")).asObservable().subscribe(response).disposed(by: disposeBag)
         scheduler.start()
         // then
         
