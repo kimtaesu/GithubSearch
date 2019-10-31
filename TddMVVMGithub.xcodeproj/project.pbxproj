@@ -23,7 +23,7 @@
 		BD2C43F22369B03A002B69B2 /* GithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43F12369B03A002B69B2 /* GithubUser.swift */; };
 		BD2C43F42369B237002B69B2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43F32369B237002B69B2 /* Logger.swift */; };
 		BD2C43FB2369B302002B69B2 /* HasDisposeBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43F92369B302002B69B2 /* HasDisposeBag.swift */; };
-		BD2C43FC2369B302002B69B2 /* RxSchedulerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43FA2369B302002B69B2 /* RxSchedulerType.swift */; };
+		BD2C43FC2369B302002B69B2 /* GitUserResponseDecodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43FA2369B302002B69B2 /* GitUserResponseDecodeTest.swift */; };
 		BD2C43FF2369B342002B69B2 /* GitUserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43FE2369B342002B69B2 /* GitUserSection.swift */; };
 		BD2C44012369B399002B69B2 /* GitUser+IdentifiableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C44002369B399002B69B2 /* GitUser+IdentifiableType.swift */; };
 		BD3383E0236AAE51008AA6AD /* SafariViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3383DF236AAE51008AA6AD /* SafariViewController+Rx.swift */; };
@@ -55,7 +55,7 @@
 		BD922B6322FE470100DE26C1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6222FE470100DE26C1 /* main.swift */; };
 		BD922B6522FE471500DE26C1 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */; };
 		BD922B6C22FE47F000DE26C1 /* GeneratedMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6B22FE47F000DE26C1 /* GeneratedMocks.swift */; };
-		BD922B7322FE49D600DE26C1 /* SearchRepositoriesDecodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B7222FE49D600DE26C1 /* SearchRepositoriesDecodeTest.swift */; };
+		BD922B7322FE49D600DE26C1 /* GitUserResponseDecodeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B7222FE49D600DE26C1 /* GitUserResponseDecodeTest.swift */; };
 		BD922B7522FE4A1900DE26C1 /* Fixture.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B7422FE4A1900DE26C1 /* Fixture.swift */; };
 		BD922B7922FE511F00DE26C1 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B7822FE511F00DE26C1 /* GithubService.swift */; };
 		BD922B7B22FE513600DE26C1 /* GithubServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B7A22FE513600DE26C1 /* GithubServiceTest.swift */; };
@@ -135,7 +135,7 @@
 		BD2C43F12369B03A002B69B2 /* GithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubUser.swift; sourceTree = "<group>"; };
 		BD2C43F32369B237002B69B2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BD2C43F92369B302002B69B2 /* HasDisposeBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDisposeBag.swift; sourceTree = "<group>"; };
-		BD2C43FA2369B302002B69B2 /* RxSchedulerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSchedulerType.swift; sourceTree = "<group>"; };
+		BD2C43FA2369B302002B69B2 /* GitUserResponseDecodeTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitUserResponseDecodeTest.swift; sourceTree = "<group>"; };
 		BD2C43FE2369B342002B69B2 /* GitUserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserSection.swift; sourceTree = "<group>"; };
 		BD2C44002369B399002B69B2 /* GitUser+IdentifiableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GitUser+IdentifiableType.swift"; sourceTree = "<group>"; };
 		BD3383DF236AAE51008AA6AD /* SafariViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SafariViewController+Rx.swift"; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 		BD922B6222FE470100DE26C1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppDelegate.swift; sourceTree = "<group>"; };
 		BD922B6B22FE47F000DE26C1 /* GeneratedMocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneratedMocks.swift; sourceTree = "<group>"; };
-		BD922B7222FE49D600DE26C1 /* SearchRepositoriesDecodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoriesDecodeTest.swift; sourceTree = "<group>"; };
+		BD922B7222FE49D600DE26C1 /* GitUserResponseDecodeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitUserResponseDecodeTest.swift; sourceTree = "<group>"; };
 		BD922B7422FE4A1900DE26C1 /* Fixture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixture.swift; sourceTree = "<group>"; };
 		BD922B7822FE511F00DE26C1 /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
 		BD922B7A22FE513600DE26C1 /* GithubServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceTest.swift; sourceTree = "<group>"; };
@@ -292,7 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				BD2C43F92369B302002B69B2 /* HasDisposeBag.swift */,
-				BD2C43FA2369B302002B69B2 /* RxSchedulerType.swift */,
+				BD2C43FA2369B302002B69B2 /* GitUserResponseDecodeTest.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 				BD6289F222FE424B00109397 /* Info.plist */,
 				BD922B6422FE471500DE26C1 /* TestAppDelegate.swift */,
 				BDF0DE6C22FFF9F7006CC179 /* GithubSearchViewControllerTest.swift */,
-				BD922B7222FE49D600DE26C1 /* SearchRepositoriesDecodeTest.swift */,
+				BD922B7222FE49D600DE26C1 /* GitUserResponseDecodeTest.swift */,
 				BD922B7A22FE513600DE26C1 /* GithubServiceTest.swift */,
 				BD922B8722FE5BAA00DE26C1 /* URLRequestBuilderTest.swift */,
 				BDA0F2C522FFDA3B00ADC7D8 /* SearchUserViewModelTest.swift */,
@@ -812,7 +812,7 @@
 				BDF402A2236984CC000B96C1 /* HomeViewController.swift in Sources */,
 				BD2C43F42369B237002B69B2 /* Logger.swift in Sources */,
 				BD922B8C22FE644900DE26C1 /* Data+Decode.swift in Sources */,
-				BD2C43FC2369B302002B69B2 /* RxSchedulerType.swift in Sources */,
+				BD2C43FC2369B302002B69B2 /* GitUserResponseDecodeTest.swift in Sources */,
 				BD8938C6236B1DD3005B466C /* NibForNameBySwiftName.swift in Sources */,
 				BDDE4FA42369BD6200AB07A0 /* UIViewController+Alert.swift in Sources */,
 				BDDE4FA12369BC8F00AB07A0 /* UIAlertActionModel.swift in Sources */,
@@ -850,7 +850,7 @@
 				BDC21960236AF8A000951087 /* FavoriteServiceTest.swift in Sources */,
 				BD922B6C22FE47F000DE26C1 /* GeneratedMocks.swift in Sources */,
 				BDA0F2C622FFDA3B00ADC7D8 /* SearchUserViewModelTest.swift in Sources */,
-				BD922B7322FE49D600DE26C1 /* SearchRepositoriesDecodeTest.swift in Sources */,
+				BD922B7322FE49D600DE26C1 /* GitUserResponseDecodeTest.swift in Sources */,
 				BD922B7B22FE513600DE26C1 /* GithubServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
