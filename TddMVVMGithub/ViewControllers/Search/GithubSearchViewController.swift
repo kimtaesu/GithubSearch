@@ -8,10 +8,11 @@
 
 import RxDataSources
 import UIKit
+import RxSwift
 
 class GithubSearchViewController: UIViewController, HasDisposeBag {
 
-    private let viewModel: SearchUserViewModel
+    private let nextPageViewModel: NextPageViewModel
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -25,8 +26,8 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         }
     )
 
-    init(viewModel: SearchUserViewModel) {
-        self.viewModel = viewModel
+    init(viewModel: NextPageViewModel) {
+        self.nextPageViewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -47,19 +48,29 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         bindingViews()
     }
     private func bindingViews() {
-        viewModel.isLoading
+        nextPageViewModel.isLoading
             .distinctUntilChanged()
             .debug("isLoading")
             .bind(to: activityIndicator.rx.showLoading)
             .disposed(by: disposeBag)
 
-        viewModel.sections
+        nextPageViewModel.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
-        viewModel.showAlert
+        nextPageViewModel.showAlert
             .bind(to: self.rx.showAlertView)
             .disposed(by: disposeBag)
+
+        //        collectionView.rx.reachedBottom
+//            .withLatestFrom(nextpageViewModel.isLoading)
+//            .filter { !$0 }
+//            .bind(to: nextpageViewModel.nextPage)
+//            .bind(to: nextpageViewModel.nextPage)
+//            .disposed(by: disposeBag)
+//            .debounce(0.2, scheduler: MainScheduler.asyncInstance)
+//            .bind(to: viewModel.nextPage)
+//            .disposed(by: disposeBag)
     }
 }
 

@@ -35,6 +35,8 @@
 		BD6289E322FE424B00109397 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD6289E222FE424B00109397 /* Assets.xcassets */; };
 		BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6289E422FE424B00109397 /* LaunchScreen.storyboard */; };
 		BD628A0422FE440C00109397 /* GithubServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD628A0322FE440C00109397 /* GithubServiceType.swift */; };
+		BD6861C9236A97B900BB0591 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */; };
+		BD6861CB236A983900BB0591 /* NextPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6861CA236A983900BB0591 /* NextPageViewModel.swift */; };
 		BD922B5C22FE467000DE26C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5B22FE467000DE26C1 /* README.md */; };
 		BD922B5F22FE469A00DE26C1 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5E22FE469900DE26C1 /* sample.json */; };
 		BD922B6122FE46BE00DE26C1 /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */; };
@@ -119,6 +121,8 @@
 		BD6289EC22FE424B00109397 /* TddMVVMGithubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TddMVVMGithubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6289F222FE424B00109397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD628A0322FE440C00109397 /* GithubServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceType.swift; sourceTree = "<group>"; };
+		BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		BD6861CA236A983900BB0591 /* NextPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextPageViewModel.swift; sourceTree = "<group>"; };
 		BD922B5B22FE467000DE26C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BD922B5E22FE469900DE26C1 /* sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesLoader.swift; sourceTree = "<group>"; };
@@ -245,6 +249,7 @@
 				BD37FF9022FFFB23005E13E1 /* LoadingIndicator+Rx.swift */,
 				BD37FF942300015A005E13E1 /* GitUserCell.swift */,
 				BD37FF9623000161005E13E1 /* GitUserCell.xib */,
+				BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -378,6 +383,7 @@
 				BD6289DA22FE424900109397 /* GithubSearchViewController.swift */,
 				BD37FF9A23000497005E13E1 /* GithubSearchViewController.xib */,
 				BDA0F2C322FFD93800ADC7D8 /* SearchUserViewModel.swift */,
+				BD6861CA236A983900BB0591 /* NextPageViewModel.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -687,8 +693,10 @@
 			files = (
 				BD37FF952300015A005E13E1 /* GitUserCell.swift in Sources */,
 				BD37FF9122FFFB23005E13E1 /* LoadingIndicator+Rx.swift in Sources */,
+				BD6861CB236A983900BB0591 /* NextPageViewModel.swift in Sources */,
 				BD2C43FF2369B342002B69B2 /* GitUserSection.swift in Sources */,
 				BD922B8222FE539300DE26C1 /* HTTPLog.swift in Sources */,
+				BD6861C9236A97B900BB0591 /* UIScrollView+Rx.swift in Sources */,
 				BD2C43F22369B03A002B69B2 /* GithubUser.swift in Sources */,
 				BD2C43EE2369AEB0002B69B2 /* MemoryAddress.swift in Sources */,
 				BD2C43EA2369A7C1002B69B2 /* MyColor.swift in Sources */,

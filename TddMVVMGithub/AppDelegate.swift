@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let window = UIWindow()
         window.makeKeyAndVisible()
-        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: SearchUserViewModel(of: githubService, scheduler: schduler)))
+        let homeViewController = HomeViewController(dependency: HomeViewController.Dependency(viewModel: NextPageViewModel(of: githubService, scheduler: schduler)))
         window.rootViewController = UINavigationController(rootViewController: homeViewController)
         self.window = window
         return true
