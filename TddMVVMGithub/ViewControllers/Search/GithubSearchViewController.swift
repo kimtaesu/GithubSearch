@@ -73,8 +73,12 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
             .disposed(by: disposeBag)
 
         viewModel.navigateDetailView
-            .map { SafariRouteArgument(url: $0) }
-            .bind(to: self.rx.presentSafari)
+            .asDriver(onErrorJustReturn: GitUser.empty)
+            .drive(onNext: { [weak self] user in
+                guard let self = self else { return }
+                let detailViewController = DetailViewController(user: user)
+                self.present(detailViewController, animated: true)
+            })
             .disposed(by: disposeBag)
 
         viewModel.emptyMessage

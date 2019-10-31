@@ -23,7 +23,7 @@ class SearchUserViewModel: HasDisposeBag {
     let emptyMessage = BehaviorRelay<String>(value: L10n.searchEmptyMessage)
     let showAlert = PublishRelay<UIAlertViewModel>()
     let sections = PublishRelay<[GitUserSection]>()
-    let navigateDetailView = PublishRelay<String>()
+    let navigateDetailView = PublishRelay<GitUser>()
     
     private var _userSections: [GitUserSection] = []
     
@@ -37,8 +37,8 @@ class SearchUserViewModel: HasDisposeBag {
             .debug("item selected")
             .subscribe(onNext: { [weak self] ip in
                 guard let self = self else { return }
-                let url = self._userSections[ip.section].items[ip.item].url
-                self.navigateDetailView.accept(url)
+                let user = self._userSections[ip.section].items[ip.item]
+                self.navigateDetailView.accept(user)
             })
             .disposed(by: disposeBag)
         

@@ -22,3 +22,7 @@ struct GitUser: Decodable, Equatable {
     let html_url: String
     let score: Double
 }
+
+extension GitUser {
+    static let empty = GitUser(login: "", id: -1, avatar_url: "", url: "", html_url: "", score: 0)
+}

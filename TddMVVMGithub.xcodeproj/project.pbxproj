@@ -44,6 +44,11 @@
 		BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD6289E422FE424B00109397 /* LaunchScreen.storyboard */; };
 		BD628A0422FE440C00109397 /* GithubServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD628A0322FE440C00109397 /* GithubServiceType.swift */; };
 		BD6861C9236A97B900BB0591 /* UIScrollView+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */; };
+		BD8938BF236B1CBF005B466C /* OptionMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD8938BD236B1CBF005B466C /* OptionMenuView.xib */; };
+		BD8938C0236B1CBF005B466C /* OptionMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8938BE236B1CBF005B466C /* OptionMenuView.swift */; };
+		BD8938C2236B1D6A005B466C /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8938C1236B1D6A005B466C /* NibLoadable.swift */; };
+		BD8938C4236B1DB3005B466C /* ScreenUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8938C3236B1DB3005B466C /* ScreenUtils.swift */; };
+		BD8938C6236B1DD3005B466C /* NibForNameBySwiftName.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8938C5236B1DD3005B466C /* NibForNameBySwiftName.swift */; };
 		BD922B5C22FE467000DE26C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5B22FE467000DE26C1 /* README.md */; };
 		BD922B5F22FE469A00DE26C1 /* user_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = BD922B5E22FE469900DE26C1 /* user_sample.json */; };
 		BD922B6122FE46BE00DE26C1 /* ResourcesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */; };
@@ -67,6 +72,8 @@
 		BDA0F2C622FFDA3B00ADC7D8 /* SearchUserViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C522FFDA3B00ADC7D8 /* SearchUserViewModelTest.swift */; };
 		BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */; };
 		BDA0F2CA22FFE48500ADC7D8 /* AssertMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */; };
+		BDB02C31236B16DE004C5D4D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB02C30236B16DE004C5D4D /* DetailViewController.swift */; };
+		BDB45191236B18E200AE726B /* UIViewController+SafeArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB45190236B18E200AE726B /* UIViewController+SafeArea.swift */; };
 		BDC21960236AF8A000951087 /* FavoriteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC2195F236AF8A000951087 /* FavoriteServiceTest.swift */; };
 		BDDE4FA12369BC8F00AB07A0 /* UIAlertActionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE4FA02369BC8F00AB07A0 /* UIAlertActionModel.swift */; };
 		BDDE4FA42369BD6200AB07A0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDE4FA32369BD6200AB07A0 /* UIViewController+Alert.swift */; };
@@ -153,6 +160,11 @@
 		BD6289F222FE424B00109397 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD628A0322FE440C00109397 /* GithubServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceType.swift; sourceTree = "<group>"; };
 		BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Rx.swift"; sourceTree = "<group>"; };
+		BD8938BD236B1CBF005B466C /* OptionMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionMenuView.xib; sourceTree = "<group>"; };
+		BD8938BE236B1CBF005B466C /* OptionMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionMenuView.swift; sourceTree = "<group>"; };
+		BD8938C1236B1D6A005B466C /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		BD8938C3236B1DB3005B466C /* ScreenUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenUtils.swift; sourceTree = "<group>"; };
+		BD8938C5236B1DD3005B466C /* NibForNameBySwiftName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibForNameBySwiftName.swift; sourceTree = "<group>"; };
 		BD922B5B22FE467000DE26C1 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BD922B5E22FE469900DE26C1 /* user_sample.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_sample.json; sourceTree = "<group>"; };
 		BD922B6022FE46BE00DE26C1 /* ResourcesLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesLoader.swift; sourceTree = "<group>"; };
@@ -178,6 +190,8 @@
 		BDA0F2C522FFDA3B00ADC7D8 /* SearchUserViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewModelTest.swift; sourceTree = "<group>"; };
 		BDA0F2C722FFE3B500ADC7D8 /* SearchOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOption.swift; sourceTree = "<group>"; };
 		BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertMainThread.swift; sourceTree = "<group>"; };
+		BDB02C30236B16DE004C5D4D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BDB45190236B18E200AE726B /* UIViewController+SafeArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeArea.swift"; sourceTree = "<group>"; };
 		BDC2195F236AF8A000951087 /* FavoriteServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteServiceTest.swift; sourceTree = "<group>"; };
 		BDDE4FA02369BC8F00AB07A0 /* UIAlertActionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionModel.swift; sourceTree = "<group>"; };
 		BDDE4FA32369BD6200AB07A0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
@@ -240,6 +254,7 @@
 			children = (
 				BD2C43F82369B27F002B69B2 /* Rx */,
 				BD2C43F72369B272002B69B2 /* View */,
+				BD8938C3236B1DB3005B466C /* ScreenUtils.swift */,
 				BDA0F2C922FFE48500ADC7D8 /* AssertMainThread.swift */,
 				BD2C43ED2369AEB0002B69B2 /* MemoryAddress.swift */,
 				BD37FF9222FFFB3E005E13E1 /* AssociatedObjectStore.swift */,
@@ -253,12 +268,22 @@
 		BD2C43F72369B272002B69B2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BD8938C5236B1DD3005B466C /* NibForNameBySwiftName.swift */,
+				BD8938C1236B1D6A005B466C /* NibLoadable.swift */,
+				BD8938BE236B1CBF005B466C /* OptionMenuView.swift */,
+				BD8938BD236B1CBF005B466C /* OptionMenuView.xib */,
+				BD37FF9022FFFB23005E13E1 /* LoadingIndicator+Rx.swift */,
+				BD3383DF236AAE51008AA6AD /* SafariViewController+Rx.swift */,
+				BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */,
+				BD1415AD236B14F2003D995D /* UILabel+Empty.swift */,
+				BDDE4FA32369BD6200AB07A0 /* UIViewController+Alert.swift */,
 				BD37FF9823000311005E13E1 /* SwiftNameIdentifier.swift */,
 				BD37FF9C230015BF005E13E1 /* NibForName.swift */,
 				BDDE4FA02369BC8F00AB07A0 /* UIAlertActionModel.swift */,
 				BDDE4FA52369BD9E00AB07A0 /* UIAlertControllerViewer.swift */,
 				BDDE4FA72369BF5000AB07A0 /* UIAlertViewModel.swift */,
 				BD1415AB236B1445003D995D /* UILabel+TextSize.swift */,
+				BDB45190236B18E200AE726B /* UIViewController+SafeArea.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,13 +309,8 @@
 		BD37FF8F22FFFB23005E13E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BD1415AD236B14F2003D995D /* UILabel+Empty.swift */,
-				BDDE4FA32369BD6200AB07A0 /* UIViewController+Alert.swift */,
-				BD37FF9022FFFB23005E13E1 /* LoadingIndicator+Rx.swift */,
-				BD3383DF236AAE51008AA6AD /* SafariViewController+Rx.swift */,
 				BD37FF942300015A005E13E1 /* GitUserCell.swift */,
 				BD37FF9623000161005E13E1 /* GitUserCell.xib */,
-				BD6861C8236A97B900BB0591 /* UIScrollView+Rx.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -416,10 +436,19 @@
 		BDA0F2C222FFD92B00ADC7D8 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BDB02C2F236B16D2004C5D4D /* Detail */,
 				BDF402A0236984C0000B96C1 /* Home */,
 				BDF4029F236984B4000B96C1 /* Search */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BDB02C2F236B16D2004C5D4D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BDB02C30236B16DE004C5D4D /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		BDF0DE6822FFF9F7006CC179 /* Utils */ = {
@@ -573,6 +602,7 @@
 				BD37FF9B23000497005E13E1 /* GithubSearchViewController.xib in Resources */,
 				BD6289E622FE424B00109397 /* LaunchScreen.storyboard in Resources */,
 				BDF553B7236989E4005F6E26 /* Localizable.strings in Resources */,
+				BD8938BF236B1CBF005B466C /* OptionMenuView.xib in Resources */,
 				BD6289E322FE424B00109397 /* Assets.xcassets in Resources */,
 				BD922B5C22FE467000DE26C1 /* README.md in Resources */,
 				BD37FF9723000161005E13E1 /* GitUserCell.xib in Resources */,
@@ -747,8 +777,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8938C0236B1CBF005B466C /* OptionMenuView.swift in Sources */,
 				BD37FF952300015A005E13E1 /* GitUserCell.swift in Sources */,
 				BD37FF9122FFFB23005E13E1 /* LoadingIndicator+Rx.swift in Sources */,
+				BD8938C4236B1DB3005B466C /* ScreenUtils.swift in Sources */,
 				BD2C43FF2369B342002B69B2 /* GitUserSection.swift in Sources */,
 				BD922B8222FE539300DE26C1 /* HTTPLog.swift in Sources */,
 				BD6861C9236A97B900BB0591 /* UIScrollView+Rx.swift in Sources */,
@@ -763,6 +795,7 @@
 				BD922B6322FE470100DE26C1 /* main.swift in Sources */,
 				BD6289E122FE424900109397 /* TddMVVMGithub.xcdatamodeld in Sources */,
 				BDDE4FA82369BF5000AB07A0 /* UIAlertViewModel.swift in Sources */,
+				BDB02C31236B16DE004C5D4D /* DetailViewController.swift in Sources */,
 				BD1415AE236B14F2003D995D /* UILabel+Empty.swift in Sources */,
 				BD922B8022FE534900DE26C1 /* RequestsError.swift in Sources */,
 				BD2C43E92369A7C1002B69B2 /* Assets.swift in Sources */,
@@ -780,6 +813,7 @@
 				BD2C43F42369B237002B69B2 /* Logger.swift in Sources */,
 				BD922B8C22FE644900DE26C1 /* Data+Decode.swift in Sources */,
 				BD2C43FC2369B302002B69B2 /* RxSchedulerType.swift in Sources */,
+				BD8938C6236B1DD3005B466C /* NibForNameBySwiftName.swift in Sources */,
 				BDDE4FA42369BD6200AB07A0 /* UIViewController+Alert.swift in Sources */,
 				BDDE4FA12369BC8F00AB07A0 /* UIAlertActionModel.swift in Sources */,
 				BD9DDBD4236AD98F005D22D7 /* FavoriteService.swift in Sources */,
@@ -788,6 +822,8 @@
 				BD922B8422FE5A0000DE26C1 /* HTTPMethod.swift in Sources */,
 				BD922B8622FE5B0900DE26C1 /* URLRequestBuilder.swift in Sources */,
 				BD2C43EB2369A7C1002B69B2 /* L10n.swift in Sources */,
+				BD8938C2236B1D6A005B466C /* NibLoadable.swift in Sources */,
+				BDB45191236B18E200AE726B /* UIViewController+SafeArea.swift in Sources */,
 				BD2C44012369B399002B69B2 /* GitUser+IdentifiableType.swift in Sources */,
 				BD6289DB22FE424900109397 /* GithubSearchViewController.swift in Sources */,
 				BD6289D922FE424900109397 /* AppDelegate.swift in Sources */,
