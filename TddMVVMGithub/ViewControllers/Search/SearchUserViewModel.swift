@@ -10,16 +10,17 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class SearchViewModel: HasDisposeBag {
+class SearchUserViewModel: HasDisposeBag {
 
     private let service: GithubServiceType
     private let scheduler: RxSchedulerType
 
     let isLoading = PublishRelay<Bool>()
     let searchText = PublishRelay<String>()
-    let sections = PublishRelay<[RepositorySection]>()
+    let sections = PublishRelay<[GitUserSection]>()
     let doSearch = PublishRelay<Void>()
-    private var _repositories: [Repository] = []
+    let showAlert = PublishRelay<UIAlertViewModel>()
+    private var _userSections: [GitUserSection] = []
     
     init(of: GithubServiceType, scheduler: RxSchedulerType) {
         service = of
@@ -28,6 +29,7 @@ class SearchViewModel: HasDisposeBag {
         let shareSearchText = searchText.share()
 
         doSearch
+            .debug("doSearch")
             .observeOn(self.scheduler.main)
             .do(onNext: { [weak isLoading] _ in
                     assertMainThread()
@@ -35,22 +37,28 @@ class SearchViewModel: HasDisposeBag {
                 })
             .observeOn(self.scheduler.io)
             .withLatestFrom(shareSearchText)
-            .flatMapLatest { [weak service, _repositories] text -> Observable<SearchRepositories> in
+            .flatMapLatest { [service] text -> Observable<GitUserResponse> in
                 assertBackgroundThread()
-                return (service?.search(sortOption: SearchOption(query: text)) ?? .never())
+                return service.searchUser(sortOption: SearchOption(query: text, sort: "followers"))
                     .debug("search a repositories of Github")
+                    .do(onError: { [weak self] e in
+                        guard let self = self else { return }
+                        logger.error(e)
+                        self.showAlert.accept(UIAlertViewModel.Builder(message: "에러가 발생하였습니다.").build())
+                    })
                     .catchError {
-                        print("error: \($0)")
-                        return Observable.just(SearchRepositories(total_count: Int.max, incomplete_results: false, items: _repositories))
+                        logger.error("error: \($0)")
+                        return Observable.just(GitUserResponse(total_count: Int.max, incomplete_results: false, items: []))
                 }
             }
             .subscribe(onNext: { [weak self] result in
                 guard let self = self else { return }
-                print("subscribe: \(result)")
+                logger.info("subscribe: \(result)")
                 self.isLoading.accept(false)
-                self._repositories = result.items
-                let section = [RepositorySection(header: "repositories", items: result.items)]
-                self.sections.accept(section)
+                if !result.items.isEmpty {
+                    self._userSections = [GitUserSection(header: "users", items: result.items)]
+                    self.sections.accept(self._userSections)
+                }
             })
             .disposed(by: disposeBag)
     }

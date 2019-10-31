@@ -13,7 +13,7 @@ struct SearchOption: Encodable {
     let sort: String
     let order: String
     
-    init(query: String, sort: String = "stars", order: String = "desc") {
+    init(query: String, sort: String, order: String = "desc") {
         self.q = query
         self.sort = sort
         self.order = order

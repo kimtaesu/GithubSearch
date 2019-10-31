@@ -11,23 +11,21 @@ import UIKit
 
 class GithubSearchViewController: UIViewController, HasDisposeBag {
 
-    private let viewModel: SearchViewModel
+    private let viewModel: SearchUserViewModel
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    let dataSource = RxCollectionViewSectionedAnimatedDataSource<RepositorySection>(
+    let dataSource = RxCollectionViewSectionedAnimatedDataSource<GitUserSection>(
         configureCell: { ds, cv, ip, item in
-            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: RepositoryCell.swiftIdentifier, for: ip) as? RepositoryCell else { return UICollectionViewCell() }
-            cell.repositoryName.text = item.name
-            cell.ownerName.text = item.owner.login
-            cell.starCount.text = String(item.stargazers_count)
-            cell.forkCount.text = String(item.forks_count)
+            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: GitUserCell.swiftIdentifier, for: ip) as? GitUserCell else { return UICollectionViewCell() }
+            cell.userName.text = item.login
+            cell.score.text = String(item.score)
             return cell
         }
     )
 
-    init(viewModel: SearchViewModel) {
+    init(viewModel: SearchUserViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -38,11 +36,17 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        activityIndicator.isHidden = true
-        collectionView.register(RepositoryCell.nib, forCellWithReuseIdentifier: RepositoryCell.swiftIdentifier)
-        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        
+        activityIndicator.do {
+            $0.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            $0.isHidden = true
+        }
+        collectionView.do {
+            $0.register(GitUserCell.nib, forCellWithReuseIdentifier: GitUserCell.swiftIdentifier)
+            $0.rx.setDelegate(self).disposed(by: disposeBag)
+        }
+        bindingViews()
+    }
+    private func bindingViews() {
         viewModel.isLoading
             .distinctUntilChanged()
             .debug("isLoading")
@@ -53,6 +57,9 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        viewModel.showAlert
+            .bind(to: self.rx.showAlertView)
+            .disposed(by: disposeBag)
     }
 }
 

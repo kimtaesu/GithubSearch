@@ -1,21 +1,21 @@
 //
-//  RepositorySection.swift
+//  GitUserSection.swift
 //  TddMVVMGithub
 //
-//  Created by tskim on 11/08/2019.
+//  Created by tskim on 2019/10/30.
 //  Copyright © 2019 hucet. All rights reserved.
 //
 
 import RxDataSources
 
-struct RepositorySection {
+struct GitUserSection {
     var header: String
     var items: [Item]
 }
 
-extension RepositorySection: AnimatableSectionModelType {
-    typealias Item = Repository
-    init(original: RepositorySection, items: [Item]) {
+extension GitUserSection: AnimatableSectionModelType {
+    typealias Item = GitUser
+    init(original: GitUserSection, items: [Item]) {
         self = original
         self.items = items
     }

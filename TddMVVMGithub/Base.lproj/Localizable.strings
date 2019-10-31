@@ -8,3 +8,5 @@
 "tabbar_search_title" = "검색";
 "tabbar_favorite_title" = "좋아요";
 "searchbar_placeholder" = "Search";
+"ok" = "확인";
+"cancel" = "취소";

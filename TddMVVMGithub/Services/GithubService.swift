@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 class GithubService: GithubServiceType {
+
     static let BASE_URL = "https://api.github.com/"
     let timeoutInterval = 5.0
     private let requests: NetworkRequestProtocol
@@ -26,25 +27,27 @@ class GithubService: GithubServiceType {
     convenience init(scheduler: RxSchedulerType) {
         self.init(scheduler: scheduler, requests: Requests.shared)
     }
-    
-    func search(sortOption: SearchOption) -> Observable<SearchRepositories> {
-        let path = "/search/repositories"
-        return Observable
-            .deferred {
-                var urlRequest: URLRequest
-                do {
-                    urlRequest = try URLRequestBuilder
-                        .get(baseUrl: GithubService.BASE_URL)
-                        .path(path)
-                        .queryItems(sortOption.tryQueryItem())
-                        .build()
-                    urlRequest.addValue("", forHTTPHeaderField: "User-Agent")
-                } catch {
-                    return Observable.error(error)
-                }
-                return self.requests.request(with: urlRequest)
-                    .map(SearchRepositories.self)
-            }
+
+    func searchUser(sortOption: SearchOption) -> Observable<GitUserResponse> {
+        let path = "/search/users"
+        do {
+            return search(request: try makeURLRequest(path: path, sortOption: sortOption))
+        } catch {
+            return Observable.error(error)
+        }
+    }
+    private func makeURLRequest(path: String, sortOption: SearchOption) throws -> URLRequest {
+        var request = try URLRequestBuilder
+            .get(baseUrl: GithubService.BASE_URL)
+            .path(path)
+            .queryItems(sortOption.tryQueryItem())
+            .build()
+        request.addValue("", forHTTPHeaderField: "User-Agent")
+        return request
+    }
+    private func search<T>(request: URLRequest) -> Observable<T> where T: Decodable {
+        return self.requests.request(with: request)
+            .map(T.self)
             .subscribeOn(self.scheduler.network)
     }
 }

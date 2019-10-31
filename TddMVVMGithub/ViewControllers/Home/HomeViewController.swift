@@ -10,7 +10,11 @@ import Foundation
 import UIKit
 
 class HomeViewController: UITabBarController, HasDisposeBag {
-
+    
+    struct Dependency {
+        let viewModel: SearchUserViewModel
+    }
+    
     private let uiSearchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.returnKeyType = .done
@@ -62,11 +66,5 @@ class HomeViewController: UITabBarController, HasDisposeBag {
             })
             .bind(to: self.dependency.viewModel.doSearch)
             .disposed(by: disposeBag)
-    }
-}
-
-extension HomeViewController {
-    struct Dependency {
-        let viewModel: SearchViewModel
     }
 }
