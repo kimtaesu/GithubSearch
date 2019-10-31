@@ -8,9 +8,9 @@
 
 import Foundation
 import RxSwift
+import CoreData
 
 protocol FavoriteServiceType: class {
-    func addFavorite(favorite: Favorite)
-    func removeFavorite(favorite: Favorite)
-    func isFavorite(id: Int)
+    func isFavorite(context: NSManagedObjectContext, id: Int) -> Observable<Bool>
+    func getFavorite(context: NSManagedObjectContext) -> Observable<[Favorite]>
 }

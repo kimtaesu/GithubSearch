@@ -11,8 +11,7 @@ import CoreData
 
 
 extension Favorite {
-
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Favorite> {
+    public static func fetchManageRequest() -> NSFetchRequest<Favorite> {
         return NSFetchRequest<Favorite>(entityName: "Favorite")
     }
 

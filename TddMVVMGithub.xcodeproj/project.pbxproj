@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		70C0DAA1D8AB59DA39BC47FA /* Pods_TddMVVMGithubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6473C29726E69561458A8E51 /* Pods_TddMVVMGithubTests.framework */; };
+		BD141597236B03A5003D995D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD141596236B03A5003D995D /* CoreDataManager.swift */; };
+		BD141599236B08C3003D995D /* CoreDataManager+Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD141598236B08C3003D995D /* CoreDataManager+Flush.swift */; };
+		BD14159D236B0E41003D995D /* GithubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14159C236B0E41003D995D /* GithubError.swift */; };
 		BD2C43E92369A7C1002B69B2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E52369A7C1002B69B2 /* Assets.swift */; };
 		BD2C43EA2369A7C1002B69B2 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E62369A7C1002B69B2 /* MyColor.swift */; };
 		BD2C43EB2369A7C1002B69B2 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E72369A7C1002B69B2 /* L10n.swift */; };
@@ -93,6 +96,9 @@
 		7884A84347E7D05DF1CA3105 /* Pods-TddMVVMGithubTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithubTests.debug.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TddMVVMGithub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B228A6BAC4921DEC0A689D4F /* Pods-TddMVVMGithubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithubTests.release.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithubTests/Pods-TddMVVMGithubTests.release.xcconfig"; sourceTree = "<group>"; };
+		BD141596236B03A5003D995D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		BD141598236B08C3003D995D /* CoreDataManager+Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Flush.swift"; sourceTree = "<group>"; };
+		BD14159C236B0E41003D995D /* GithubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubError.swift; sourceTree = "<group>"; };
 		BD2C43E52369A7C1002B69B2 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		BD2C43E62369A7C1002B69B2 /* MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		BD2C43E72369A7C1002B69B2 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 				BD37FF9222FFFB3E005E13E1 /* AssociatedObjectStore.swift */,
 				BD62523822FEF62100E7B564 /* Encodable+Dict.swift */,
 				BD2C43F32369B237002B69B2 /* Logger.swift */,
+				BD14159C236B0E41003D995D /* GithubError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -376,6 +383,7 @@
 			children = (
 				BD9DDBCD236AD780005D22D7 /* Favorite+CoreDataProperties.swift */,
 				BD9DDBCE236AD780005D22D7 /* Favorite+CoreDataClass.swift */,
+				BD141596236B03A5003D995D /* CoreDataManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				BDF0DE6922FFF9F7006CC179 /* SearchRepositories+Equatable.swift */,
 				BDF0DE6A22FFF9F7006CC179 /* RepositorySection+Equatable.swift */,
 				BDF0DE6B22FFF9F7006CC179 /* TestRxScheduler.swift */,
+				BD141598236B08C3003D995D /* CoreDataManager+Flush.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -729,11 +738,13 @@
 				BDDE4FA82369BF5000AB07A0 /* UIAlertViewModel.swift in Sources */,
 				BD922B8022FE534900DE26C1 /* RequestsError.swift in Sources */,
 				BD2C43E92369A7C1002B69B2 /* Assets.swift in Sources */,
+				BD14159D236B0E41003D995D /* GithubError.swift in Sources */,
 				BD37FF9923000311005E13E1 /* SwiftNameIdentifier.swift in Sources */,
 				BD37FF9322FFFB3E005E13E1 /* AssociatedObjectStore.swift in Sources */,
 				BD62523D22FEF8A400E7B564 /* NetworkRequestProtocol.swift in Sources */,
 				BD2C43EC2369A7C1002B69B2 /* Fonts.swift in Sources */,
 				BD37FF9D230015BF005E13E1 /* NibForName.swift in Sources */,
+				BD141597236B03A5003D995D /* CoreDataManager.swift in Sources */,
 				BDA0F2CA22FFE48500ADC7D8 /* AssertMainThread.swift in Sources */,
 				BD922B7922FE511F00DE26C1 /* GithubService.swift in Sources */,
 				BDA0F2C822FFE3B500ADC7D8 /* SearchOption.swift in Sources */,
@@ -762,6 +773,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD62523F22FEF97500E7B564 /* MockNetworkRequestProtocol+Mocking.swift in Sources */,
+				BD141599236B08C3003D995D /* CoreDataManager+Flush.swift in Sources */,
 				BD922B6122FE46BE00DE26C1 /* ResourcesLoader.swift in Sources */,
 				BDF0DE7022FFF9F7006CC179 /* SearchRepositories+Equatable.swift in Sources */,
 				BD922B8822FE5BAA00DE26C1 /* URLRequestBuilderTest.swift in Sources */,
