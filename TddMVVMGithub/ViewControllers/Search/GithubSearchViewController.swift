@@ -7,34 +7,26 @@
 //
 
 import RxDataSources
+import RxSwift
 import UIKit
 
 class GithubSearchViewController: UIViewController, HasDisposeBag {
 
-    private let viewModel: SearchViewModel
+    private let viewModel: SearchUserViewModel
     @IBOutlet weak var collectionView: UICollectionView!
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    private let uiSearchBar: UISearchBar = {
-        let searchBar = UISearchBar()
-        searchBar.returnKeyType = .done
-        searchBar.placeholder = "Search"
-        return searchBar
-    }()
-
-    let dataSource = RxCollectionViewSectionedAnimatedDataSource<RepositorySection>(
+    let dataSource = RxCollectionViewSectionedAnimatedDataSource<GitUserSection>(
         configureCell: { ds, cv, ip, item in
-            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: RepositoryCell.swiftIdentifier, for: ip) as? RepositoryCell else { return UICollectionViewCell() }
-            cell.repositoryName.text = item.name
-            cell.ownerName.text = item.owner.login
-            cell.starCount.text = String(item.stargazers_count)
-            cell.forkCount.text = String(item.forks_count)
+            guard let cell = cv.dequeueReusableCell(withReuseIdentifier: GitUserCell.swiftIdentifier, for: ip) as? GitUserCell else { return UICollectionViewCell() }
+            cell.userName.text = item.login
+            cell.score.text = String(item.score)
             return cell
         }
     )
 
-    init(viewModel: SearchViewModel) {
+    init(viewModel: SearchUserViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,34 +37,49 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activityIndicator.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-        activityIndicator.isHidden = true
-        collectionView.register(RepositoryCell.nib, forCellWithReuseIdentifier: RepositoryCell.swiftIdentifier)
-        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        navigationItem.titleView = uiSearchBar
-
+        activityIndicator.do {
+            $0.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            $0.isHidden = true
+        }
+        collectionView.do {
+            $0.register(GitUserCell.nib, forCellWithReuseIdentifier: GitUserCell.swiftIdentifier)
+            $0.rx.setDelegate(self).disposed(by: disposeBag)
+        }
+        bindingViews()
+    }
+    private func bindingViews() {
         viewModel.isLoading
             .distinctUntilChanged()
             .debug("isLoading")
             .bind(to: activityIndicator.rx.showLoading)
             .disposed(by: disposeBag)
 
-        uiSearchBar.rx.text.orEmpty
-            .distinctUntilChanged()
-            .bind(to: viewModel.searchText)
-            .disposed(by: disposeBag)
-
-        uiSearchBar.rx.searchButtonClicked
-            .do(onNext: { [weak uiSearchBar] in
-                uiSearchBar?.resignFirstResponder()
-            })
-            .bind(to: viewModel.doSearch)
-            .disposed(by: disposeBag)
-
         viewModel.sections
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
 
+        viewModel.showAlert
+            .bind(to: self.rx.showAlertView)
+            .disposed(by: disposeBag)
+        
+        viewModel.navigateDetailView
+            .map { SafariRouteArgument(url: $0) }
+            .bind(to: self.rx.presentSafari)
+            .disposed(by: disposeBag)
+            
+        collectionView.rx.itemSelected
+            .bind(to: viewModel.itemSelected)
+            .disposed(by: disposeBag)
+        
+        //        collectionView.rx.reachedBottom
+//            .withLatestFrom(nextpageViewModel.isLoading)
+//            .filter { !$0 }
+//            .bind(to: nextpageViewModel.nextPage)
+//            .bind(to: nextpageViewModel.nextPage)
+//            .disposed(by: disposeBag)
+//            .debounce(0.2, scheduler: MainScheduler.asyncInstance)
+//            .bind(to: viewModel.nextPage)
+//            .disposed(by: disposeBag)
     }
 }
 

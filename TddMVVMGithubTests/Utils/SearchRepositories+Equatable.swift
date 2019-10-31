@@ -9,8 +9,8 @@
 import Foundation
 @testable import TddMVVMGithub
 
-extension SearchRepositories: Equatable {
-    public static func == (lhs: SearchRepositories, rhs: SearchRepositories) -> Bool {
+extension GitUserResponse: Equatable {
+    public static func == (lhs: GitUserResponse, rhs: GitUserResponse) -> Bool {
         return lhs.total_count == rhs.total_count && lhs.items == rhs.items
     }
 }

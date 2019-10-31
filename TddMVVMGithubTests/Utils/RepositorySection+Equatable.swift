@@ -9,8 +9,8 @@
 import Foundation
 @testable import TddMVVMGithub
 
-extension RepositorySection: Equatable {
-    public static func ==(rhs: RepositorySection, lhs: RepositorySection) -> Bool {
+extension GitUserSection: Equatable {
+    public static func ==(rhs: GitUserSection, lhs: GitUserSection) -> Bool {
         return rhs.items == lhs.items
     }
 }
