@@ -7,6 +7,7 @@
 //
 import Then
 import UIKit
+import BeautifulRequests
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -22,6 +22,7 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
             guard let cell = cv.dequeueReusableCell(withReuseIdentifier: GitUserCell.swiftIdentifier, for: ip) as? GitUserCell else { return UICollectionViewCell() }
             cell.userName.text = item.login
             cell.score.text = String(item.score)
+            cell.avatar.beautiful.setImage(with: URL(string: item.avatar_url))
             return cell
         }
     )
@@ -84,6 +85,9 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
 }
 
 extension GithubSearchViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // TODO: cancel image download
+    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let collectionViewLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize(width: 0, height: 0) }
         let sectionInset = collectionViewLayout.sectionInset
