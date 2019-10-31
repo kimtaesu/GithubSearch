@@ -18,9 +18,3 @@ colors:
   outputs:
     templatePath: templates/colors/literals-swift5.stencil
     output: MyColor.swift
-
-fonts:
-  inputs: Resources/Fonts
-  outputs:
-    templateName: swift4
-    output: Fonts.swift
