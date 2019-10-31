@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import TddMVVMGithub
 
-class SearchRepositoriesDecodeTest: XCTestCase {
+class GitUserResponseDecodeTest: XCTestCase {
 
     func testDecode() {
         let sample = Fixture.GitUser.sampleData

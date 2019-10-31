@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         HTTPLog.enabled = true
         
+        if #available(iOS 13.0, *) {
+            window?.overrideUserInterfaceStyle = .light
+        }
+        
         let schduler = RxScheduler()
         let githubService = GithubService(scheduler: schduler)
         

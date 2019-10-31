@@ -13,7 +13,7 @@ import XCTest
 import Cuckoo
 @testable import TddMVVMGithub
 
-class SearchViewModelTest: XCTestCase {
+class SearchUserViewModelTest: XCTestCase {
 
     var viewModel: SearchUserViewModel!
     var service: MockGithubServiceType!
