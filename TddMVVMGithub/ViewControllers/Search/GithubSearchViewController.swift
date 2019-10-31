@@ -27,6 +27,14 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         }
     )
 
+    let emptyLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = ColorName.emptyLabel
+        label.setTextSize(18)
+        label.textAlignment = .center
+        return label
+    }()
+
     init(viewModel: SearchUserViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -45,6 +53,7 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         collectionView.do {
             $0.register(GitUserCell.nib, forCellWithReuseIdentifier: GitUserCell.swiftIdentifier)
             $0.rx.setDelegate(self).disposed(by: disposeBag)
+            $0.backgroundView = emptyLabel
         }
         bindingViews()
     }
@@ -62,16 +71,21 @@ class GithubSearchViewController: UIViewController, HasDisposeBag {
         viewModel.showAlert
             .bind(to: self.rx.showAlertView)
             .disposed(by: disposeBag)
-        
+
         viewModel.navigateDetailView
             .map { SafariRouteArgument(url: $0) }
             .bind(to: self.rx.presentSafari)
             .disposed(by: disposeBag)
-            
+
+        viewModel.emptyMessage
+            .debug("emptyMessage")
+            .bind(to: self.collectionView.rx.setEmptyView(view: emptyLabel))
+            .disposed(by: disposeBag)
+
         collectionView.rx.itemSelected
             .bind(to: viewModel.itemSelected)
             .disposed(by: disposeBag)
-        
+
         //        collectionView.rx.reachedBottom
 //            .withLatestFrom(nextpageViewModel.isLoading)
 //            .filter { !$0 }

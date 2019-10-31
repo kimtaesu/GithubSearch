@@ -10,3 +10,4 @@
 "searchbar_placeholder" = "Search";
 "ok" = "확인";
 "cancel" = "취소";
+"search_empty_message" = "검색어를 입력해 주세요.";
