@@ -11,6 +11,10 @@
 		BD141597236B03A5003D995D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD141596236B03A5003D995D /* CoreDataManager.swift */; };
 		BD141599236B08C3003D995D /* CoreDataManager+Flush.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD141598236B08C3003D995D /* CoreDataManager+Flush.swift */; };
 		BD14159D236B0E41003D995D /* GithubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD14159C236B0E41003D995D /* GithubError.swift */; };
+		BD1415A8236B1327003D995D /* BeautifulRequests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1415A7236B1327003D995D /* BeautifulRequests.framework */; };
+		BD1415A9236B1327003D995D /* BeautifulRequests.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BD1415A7236B1327003D995D /* BeautifulRequests.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BD1415AC236B1445003D995D /* UILabel+TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1415AB236B1445003D995D /* UILabel+TextSize.swift */; };
+		BD1415AE236B14F2003D995D /* UILabel+Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1415AD236B14F2003D995D /* UILabel+Empty.swift */; };
 		BD2C43E92369A7C1002B69B2 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E52369A7C1002B69B2 /* Assets.swift */; };
 		BD2C43EA2369A7C1002B69B2 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E62369A7C1002B69B2 /* MyColor.swift */; };
 		BD2C43EB2369A7C1002B69B2 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2C43E72369A7C1002B69B2 /* L10n.swift */; };
@@ -89,6 +93,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BD1415AA236B1327003D995D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BD1415A9236B1327003D995D /* BeautifulRequests.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0FB58F150ECFA068C0A5E7C6 /* Pods-TddMVVMGithub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithub.release.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithub/Pods-TddMVVMGithub.release.xcconfig"; sourceTree = "<group>"; };
 		24F408CB221C7BAB4064394D /* Pods-TddMVVMGithub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TddMVVMGithub.debug.xcconfig"; path = "Target Support Files/Pods-TddMVVMGithub/Pods-TddMVVMGithub.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +117,9 @@
 		BD141596236B03A5003D995D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BD141598236B08C3003D995D /* CoreDataManager+Flush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+Flush.swift"; sourceTree = "<group>"; };
 		BD14159C236B0E41003D995D /* GithubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubError.swift; sourceTree = "<group>"; };
+		BD1415A7236B1327003D995D /* BeautifulRequests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BeautifulRequests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1415AB236B1445003D995D /* UILabel+TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+TextSize.swift"; sourceTree = "<group>"; };
+		BD1415AD236B14F2003D995D /* UILabel+Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Empty.swift"; sourceTree = "<group>"; };
 		BD2C43E52369A7C1002B69B2 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		BD2C43E62369A7C1002B69B2 /* MyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		BD2C43E72369A7C1002B69B2 /* L10n.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
@@ -177,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD1415A8236B1327003D995D /* BeautifulRequests.framework in Frameworks */,
 				FA9FDA3CBC4F13705DE74BAB /* Pods_TddMVVMGithub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +217,7 @@
 		6BA7160DA37FE9EAF1EC70E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD1415A7236B1327003D995D /* BeautifulRequests.framework */,
 				8FE10C235F80F1B756386B1E /* Pods_TddMVVMGithub.framework */,
 				6473C29726E69561458A8E51 /* Pods_TddMVVMGithubTests.framework */,
 			);
@@ -235,6 +258,7 @@
 				BDDE4FA02369BC8F00AB07A0 /* UIAlertActionModel.swift */,
 				BDDE4FA52369BD9E00AB07A0 /* UIAlertControllerViewer.swift */,
 				BDDE4FA72369BF5000AB07A0 /* UIAlertViewModel.swift */,
+				BD1415AB236B1445003D995D /* UILabel+TextSize.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +284,7 @@
 		BD37FF8F22FFFB23005E13E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BD1415AD236B14F2003D995D /* UILabel+Empty.swift */,
 				BDDE4FA32369BD6200AB07A0 /* UIViewController+Alert.swift */,
 				BD37FF9022FFFB23005E13E1 /* LoadingIndicator+Rx.swift */,
 				BD3383DF236AAE51008AA6AD /* SafariViewController+Rx.swift */,
@@ -469,6 +494,7 @@
 				1FB215F1E04E7970CA9586FD /* [CP] Embed Pods Frameworks */,
 				BD6289FD22FE437D00109397 /* MarkUp */,
 				BD6289FE22FE439700109397 /* SwiftLint */,
+				BD1415AA236B1327003D995D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -726,6 +752,7 @@
 				BD2C43FF2369B342002B69B2 /* GitUserSection.swift in Sources */,
 				BD922B8222FE539300DE26C1 /* HTTPLog.swift in Sources */,
 				BD6861C9236A97B900BB0591 /* UIScrollView+Rx.swift in Sources */,
+				BD1415AC236B1445003D995D /* UILabel+TextSize.swift in Sources */,
 				BD2C43F22369B03A002B69B2 /* GithubUser.swift in Sources */,
 				BD2C43EE2369AEB0002B69B2 /* MemoryAddress.swift in Sources */,
 				BD2C43EA2369A7C1002B69B2 /* MyColor.swift in Sources */,
@@ -736,6 +763,7 @@
 				BD922B6322FE470100DE26C1 /* main.swift in Sources */,
 				BD6289E122FE424900109397 /* TddMVVMGithub.xcdatamodeld in Sources */,
 				BDDE4FA82369BF5000AB07A0 /* UIAlertViewModel.swift in Sources */,
+				BD1415AE236B14F2003D995D /* UILabel+Empty.swift in Sources */,
 				BD922B8022FE534900DE26C1 /* RequestsError.swift in Sources */,
 				BD2C43E92369A7C1002B69B2 /* Assets.swift in Sources */,
 				BD14159D236B0E41003D995D /* GithubError.swift in Sources */,

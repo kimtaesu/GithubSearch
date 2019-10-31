@@ -20,10 +20,11 @@ class SearchUserViewModel: HasDisposeBag {
     let doSearch = PublishRelay<Void>()
 
     let isLoading = PublishRelay<Bool>()
+    let emptyMessage = BehaviorRelay<String>(value: L10n.searchEmptyMessage)
     let showAlert = PublishRelay<UIAlertViewModel>()
     let sections = PublishRelay<[GitUserSection]>()
     let navigateDetailView = PublishRelay<String>()
-
+    
     private var _userSections: [GitUserSection] = []
     
     init(of: GithubServiceType, scheduler: RxSchedulerType) {
@@ -31,7 +32,7 @@ class SearchUserViewModel: HasDisposeBag {
         self.scheduler = scheduler
 
         let shareSearchText = searchText.share()
-
+        self.emptyMessage.accept(L10n.searchEmptyMessage)
         itemSelected
             .debug("item selected")
             .subscribe(onNext: { [weak self] ip in
@@ -47,6 +48,7 @@ class SearchUserViewModel: HasDisposeBag {
             .do(onNext: { [weak isLoading] _ in
                     assertMainThread()
                     isLoading?.accept(true)
+                    self.emptyMessage.accept("")
                 })
             .observeOn(self.scheduler.io)
             .withLatestFrom(shareSearchText)
@@ -71,6 +73,7 @@ class SearchUserViewModel: HasDisposeBag {
                 if !result.items.isEmpty {
                     self._userSections = [GitUserSection(header: "users", items: result.items)]
                     self.sections.accept(self._userSections)
+                    self.emptyMessage.accept("")
                 }
             })
             .disposed(by: disposeBag)
